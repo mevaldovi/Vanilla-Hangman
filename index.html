@@ -10,63 +10,44 @@
 </head>
 
 <body>
+
     <div class="container">
 
         <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-4">Vanilla Hangman</h1>
+            <div class="container"><h1 class="display-4">Vanilla Hangman</h1>
               <p class="lead">Hangman is a word guess game that is based upon a fill-in-the-blank structure. To begin, click the "Start" button.</p>
             </div>
           </div>
             <button type="button" class="btn btn-outline-danger">Start</button>
-
-		<!-- <div class="static col-md-8 col-md-offset-2">
-			<div class="modal fade" id="howToPlay" tabindex="-1" role="dialog" aria-labelledby="howToPlayLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close Hangman Information Dialogue"><span aria-hidden="true">&times;</span>
-							</button>
-							<h4 class="modal-title" id="howToPlayLabel">How To Play Hangman</h4>
-						</div>
-						<div class="modal-body">
-							<p id="howToPlay">Hangman is a word guessing game. To play, select one of the categories from the drop-down menu labeled "Category". The vowels of a word selected from the category will appear. The point of the game is to guess all the other letters in the word with less than five mistakes, or before all the parts of the man being hanged are complete. You can type letters from anywhere on the screen with your keyboard or click / tap letters from the alphabet provided on the screen.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<p id="initialInfo">Hangman is a word guessing game. To play, select one of the categories from the drop-down menu labeled "Category". The vowels of a word selected from the category will appear. The point of the game is to guess all the other letters in the word with less than five mistakes, or before all the parts of the man being hanged are complete. You can type letters from anywhere on the screen with your keyboard or click / tap letters from the alphabet provided on the screen.</p>
-			<div class="clear"></div>
-			<div class="dropdown" id="menu">
-				<button href="#" data-toggle="dropdown" type="button" id="categoryDropdown" class="btn btn-default dropdown-toggle">Category <b class="caret"></b>
-				</button>
-				<ul class="dropdown-menu" role="menu" aria-labelledby="categoryDropdown">
-					<li id="0" class="category" role="presentation">Animals</li>
-					<li id="1" class="category" role="presentation">Countries</li>
-					<li id="2" class="category" role="presentation">President's Last Names</li>
-					<li id="3" class="category" role="presentation">Sports</li>
-				</ul>
-			</div>
-		</div>
-		<div class="clear"></div>
-		<div id="game" class="col-md-10 col-md-offset-1">
-			<h2 id="category"></h2>
-			<div id="importantStatus">
-				<p id="difficulty"></p>
-				<p id="triesLeft"></p>
-			</div>
-			<h3 id="word"></h3>
-			<div id="keyboard"></div>
-			<canvas id="hangman" height="300">
-			</canvas>
-			<div id="status">
-				<div class="alert alert-info center fade in">
-					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					<strong>Hint: </strong>You can use your physical keyboard or the alphabet provided to enter letters.
-				</div>
-			</div>
-		</div>
-	</div> -->
+            <br>
+            <br>
+            <main>
+                <section>
+                  <div class="card word-guess">
+                    <div class="large-font word-blanks">J _ v _ S c r_ _t</div>
+                  </div>
+                </section>
+          
+                <section>
+                  <div class="card results">
+                    <div class = "win-loss-container">
+                    <div>
+                    <h6>Wins: <span class="win">0 </span></h6>
+                    <h6>Losses: <span class="lose">0</span></h6>
+                  </div>
+                    <button class="reset-button">Reset Score</button>
+                </div>
+                    <div class= "card timer">
+                      <div class = "timer-text">
+                      <div class="large-font timer-count">10</div>
+                      <h7>seconds remaining</h7>
+                    </div>
+                  
+                    </div>
+                  </div>
+                </section>
+              </main>
+          </div>    
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
 	<script src="assets/script.js"></script>
