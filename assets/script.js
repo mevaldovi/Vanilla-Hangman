@@ -3,7 +3,7 @@ let $ = function (id) {
 }
 
 //global variable
-const words = ["array", "boolean", "number", "string", "BigInt", "undefined", "null"];
+const words = ["array", "boolean", "number", "string", "bigint", "undefined", "null"];
 // const images = ["https://m.media-amazon.com/images/I/81QNFsN73xL._AC_SL1500_.jpg", "https://m.media-amazon.com/images/I/715-EXqiokL._AC_SL1500_.jpg", "https://ak.picdn.net/shutterstock/videos/1036938524/thumb/1.jpg", "https://m.media-amazon.com/images/I/71PcRwi5gcS._AC_SL1500_.jpg"];
 let word;
 // const img = document.createElement("img")
