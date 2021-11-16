@@ -1,5 +1,8 @@
 # Word-Guess-Game
 
+<img width="318" alt="word-guess" src="https://user-images.githubusercontent.com/83307023/141875561-83c8f93a-6c17-4002-9184-c87eb35d403c.png">
+
+
 [Click here to start playing](link goes here)
 
 ## Description
