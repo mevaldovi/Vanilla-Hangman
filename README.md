@@ -31,7 +31,7 @@ HTML, CSS, & vanilla JavaScript.
 
 # Installation
  
-If the link does not work, you can just clone down this repo, open terminal at the root index.html and select "open in integrated terminal".
+If the link does not work, you can just clone down this repo, open terminal at the root index.html and select "open in default browser".
 
 # Usage
 Simply open the application in the link above, and then type in a city name, state, or zipcode to get that location's five day forecast. 
