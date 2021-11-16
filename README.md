@@ -6,8 +6,7 @@
 [Click here to start playing](link goes here)
 
 ## Description
-Easy-to-use word guessing game. Once you click "Click here to start playing", press any key to get started. Hint: You may want to do a quick Google search "JavaScript primitive data types" before playing! 😁
-
+Easy-to-use word guessing game. 
 ## Technology 
 HTML, CSS, & vanilla JavaScript.
 
@@ -35,7 +34,9 @@ HTML, CSS, & vanilla JavaScript.
 If the link does not work, you can just clone down this repo, open terminal at the root index.html and select "open in default browser".
 
 # Usage
-Simply open the application in the link above, and then type in a city name, state, or zipcode to get that location's five day forecast. 
+Once you click "Click here to start playing", press any key to get started. 
+Hint: You may want to do a quick Google search "JavaScript primitive data types" before playing! 😁
+
 # License
 MIT License.
 # Contact
