@@ -6,7 +6,7 @@
 [Click here to start playing](link goes here)
 
 ## Description
-Easy-to-use word guessing game. Once you click "Click hree to start playing", press any key to get started. Hint: You may want to do a quick Google search "JavaScript primitive data types" before playing! 😁
+Easy-to-use word guessing game. Once you click "Click here to start playing", press any key to get started. Hint: You may want to do a quick Google search "JavaScript primitive data types" before playing! 😁
 
 ## Technology 
 HTML, CSS, & vanilla JavaScript.
