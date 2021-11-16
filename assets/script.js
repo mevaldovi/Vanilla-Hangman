@@ -4,10 +4,10 @@ let $ = function (id) {
 
 //global variable
 const words = ["array", "boolean", "number", "string", "BigInt", "undefined", "null"];
-const images = ["https://m.media-amazon.com/images/I/81QNFsN73xL._AC_SL1500_.jpg", "https://m.media-amazon.com/images/I/715-EXqiokL._AC_SL1500_.jpg", "https://ak.picdn.net/shutterstock/videos/1036938524/thumb/1.jpg", "https://m.media-amazon.com/images/I/71PcRwi5gcS._AC_SL1500_.jpg"];
+// const images = ["https://m.media-amazon.com/images/I/81QNFsN73xL._AC_SL1500_.jpg", "https://m.media-amazon.com/images/I/715-EXqiokL._AC_SL1500_.jpg", "https://ak.picdn.net/shutterstock/videos/1036938524/thumb/1.jpg", "https://m.media-amazon.com/images/I/71PcRwi5gcS._AC_SL1500_.jpg"];
 let word;
-const img = document.createElement("img")
-const parent = $("img")
+// const img = document.createElement("img")
+// const parent = $("img")
 let answerArray = [];
 let userGuess;
 let rightGuess = false;
@@ -21,7 +21,7 @@ let losses = 0;
 function random() {
   let random = Math.floor(Math.random() * words.length);
   word = words[random]
-  img.src = images[random]
+  // img.src = images[random]
 }
 
 //show blank start
@@ -102,8 +102,8 @@ document.onkeyup = function(event) {
       if (matchLength()) {
           let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/win.mp3');
           audio.play()
-          img.setAttribute("id","winImage")
-          parent.appendChild(img)
+          // img.setAttribute("id","winImage")
+          // parent.appendChild(img)
           wins++
           winsScore()
           setTimeout(initialGame, 2000)
