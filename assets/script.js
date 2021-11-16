@@ -1,68 +1,130 @@
-var wordBlank = document.querySelector(".word-blanks");
-var win = document.querySelector(".win");
-var lose = document.querySelector(".lose");
-var timerElement = document.querySelector(".timer-count");
-var startButton = document.querySelector(".start-btn");
-var resetButton = document.querySelector(".reset-button");
-
-
-var chosenWord = "";
-var numBlanks = 0;
-var winCounter = 0;
-var loseCounter = 0;
-var isWin = false;
-var timer;
-var timerCount;
-
-// Arrays used to create blanks and letters on screen
-var lettersInChosenWord = [];//spells out how many characters long the randomly chosen word will be
-var blanksLetters = []; //same but for blanks to display on the screen
-// Array of words the user will guess
-var wordList = ["variable","array", "modulus", "object", "function", "string", "boolean"];
-
-
-// Attach event listener to start button to call startGame function on click
-startButton.addEventListener("click", startGame());
-
-function regexFilter(char){ //filters through the word
-    return char.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').toLowerCase()
+let $ = function (id) {
+  return document.getElementById(id)
 }
 
-function replace(c, a) {
-	var regex = new RegExp("[^ " + a + "]", 'ig');
-	return c.replace(regex, "_");
+//global variable
+const words = ["array", "boolean", "number", "string", "BigInt", "undefined", "null"];
+const images = ["https://m.media-amazon.com/images/I/81QNFsN73xL._AC_SL1500_.jpg", "https://m.media-amazon.com/images/I/715-EXqiokL._AC_SL1500_.jpg", "https://ak.picdn.net/shutterstock/videos/1036938524/thumb/1.jpg", "https://m.media-amazon.com/images/I/71PcRwi5gcS._AC_SL1500_.jpg"];
+let word;
+const img = document.createElement("img")
+const parent = $("img")
+let answerArray = [];
+let userGuess;
+let rightGuess = false;
+let userRightGuess = 0;
+let left = 9;
+let wins = 0;
+let losses = 0;
+
+
+//random word
+function random() {
+  let random = Math.floor(Math.random() * words.length);
+  word = words[random]
+  img.src = images[random]
 }
 
-$(.start-btn).click(function() {
-    //reset variables
-    show = "aeiou";
-    triesLeft = 5;
-    gameEnded = false;
-})
-
-//Reset Keyboard
-// $("#keyboard").html('<div><span id="a" class="vowel">a</span><span id="b">b</span><span id="c">c</span><span id="d">d</span><span id="e" class="vowel">e</span><span id="f">f</span><span id="g">g</span><span id="h">h</span><span id="i" class="vowel">i</span><span id="j">j</span><span id="k">k</span><span id="l">l</span><span id="m">m</span></div><div><span id="n">n</span><span id="o" class="vowel">o</span><span id="p">p</span><span id="q">q</span><span id="r">r</span><span id="s">s</span><span id="t">t</span><span id="u" class="vowel">u</span><span id="v">v</span><span id="w">w</span><span id="x">x</span><span id="y">y</span><span id="z">z</span></div>');
-
-//Get random category
-id = $(this).attr("id");
-random = Math.floor(Math.random() * 5);
-word = wordList[id][random];
-chosenWord = $(this).html();
-// Calls init() so that it fires when page opened
-init();
-
-// The init function is called when the page loads 
-function init() {
-    getWins();
-    getlosses();
+//show blank start
+function showBlank() {
+  for (i = 0; i < word.length; i++) {
+      answerArray[i] = "_"
   }
+  $("guess").innerHTML = answerArray.join(" ")
+}
+
+//guesses left
+function guessesLeft() {
+  $("left").innerHTML = left
+}
+
+//wins
+function winsScore() {
+  $("wins").innerHTML = wins
+}
+
+//losses
+function lossesScore() {
+  $("losses").innerHTML = losses
+}
+
+//show wrong guess
+function wrongGuess(char) {
+  $("wrong").innerHTML += char + ", "
+}
+
+// resent function
+function initialGame() {
+  if ($("winImage")) {
+      $("winImage").remove()
+  }
+
+  left = 9;
+  answerArray = [];
+  $("wrong").innerHTML = "";
+  userRightGuess = 0
+  rightGuess = false;
+  guessesLeft()
+  random()
+  showBlank()
+}
+
+// call initial function
+initialGame()
+winsScore()
+lossesScore()
+
+//check letter
+function showLetter(char, str) {
+  for (let j = 0; j < str.length; j++) {
+      if (char === str[j]) {
+          rightGuess = true
+          answerArray.splice(j,1,char)
+          userRightGuess++
+      }
+  }
+  $("guess").innerHTML = answerArray.join(" ")
+}
+
+//check length
+let matchLength = function() {
+  if (word.length === userRightGuess) return true
+  else return false
+}
+
+//user guess
+document.onkeyup = function(event) {
+  userGuess = event.key.toLowerCase();
+
+  showLetter(userGuess, word)
   
-  // The startGame function is called when the start button is clicked
-  function startGame() {
-    isWin = false;
-    timerCount = 10;
-    // Prevents start button from being clicked when round is in progress
-    startButton.disabled = true;
-    renderBlanks();//WHEN the user clicks "Start", call renderBlanks() function and display blanks on page.
-    startTimer();//start the ten-second countdown.
+  if (rightGuess) {
+      rightGuess = false
+      if (matchLength()) {
+          let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/win.mp3');
+          audio.play()
+          img.setAttribute("id","winImage")
+          parent.appendChild(img)
+          wins++
+          winsScore()
+          setTimeout(initialGame, 2000)
+      } else {
+          let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/goodbell.mp3');
+          audio.play()
+      }
+  } else {
+      left--
+      if (left < 1) {
+          let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/lose.mp3');
+          audio.play()
+          initialGame()
+          losses++
+          lossesScore()
+      } else {
+          let audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/bad.mp3');
+          audio.play()
+          wrongGuess(userGuess)
+          guessesLeft()
+      }
+
   }
+}
