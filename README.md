@@ -8,7 +8,7 @@
 ## Description
 Easy-to-use word guessing game. 
 ## Technology 
-HTML, CSS, & vanilla JavaScript.
+HTML, CSS, & Vanilla JavaScript.
 
 # Table of Contents
 [Description](https://github.com/mevaldovi/Word-Guess-Game#Description)
@@ -43,7 +43,7 @@ Hint: You may want to do a quick Google search "JavaScript primitive data types"
 # License
 MIT License.
 # Contact
-[Github](https://github.com/mevaldovi)
+Github: [https://github.com/mevaldovi](https://github.com/mevaldovi)
 
 
 Shoot me an email:[mevaldovi@gmail.com](mailto:mevaldovi@gmail.com)
