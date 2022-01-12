@@ -31,7 +31,10 @@ HTML, CSS, & vanilla JavaScript.
 
 # Installation
  
-If the link does not work, you can just clone down this repo, open terminal at the root index.html and select "open in default browser".
+- No dependencies to install
+- Clone down this repo
+- Right click on index.html
+- Open in default browser
 
 # Usage
 Once you click "Click here to start playing", press any key to get started. 
