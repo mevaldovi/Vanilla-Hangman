@@ -30,11 +30,13 @@ HTML, CSS, & Vanilla JavaScript.
 [Agnowledgments](https://github.com/mevaldovi/Word-Guess-Game#Agknowledgments)
 
 # Installation
+
+Bold text indicates commands in the terminal; italicized text indicates steps to take
  
-- No dependencies to install
-- Clone down this repo
-- Right click on index.html
-- Open in default browser
+- _No dependencies to install_
+- _Clone down this repo_
+- _Right click on index.html_
+- _Open in default browser_
 
 # Usage
 Once you click "Click here to start playing", press any key to get started. 
