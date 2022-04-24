@@ -35,7 +35,7 @@ Bold text indicates commands in the terminal; italicized text indicates steps to
  
 - _No dependencies to install_
 - _Clone down this repo_
-- _Right click on index.html_
+- _Right click on_ "`index.html`"
 - _Open in default browser_
 
 # Usage
@@ -46,6 +46,8 @@ Hint: You may want to do a quick Google search "JavaScript primitive data types"
 MIT License.
 # Contact
 Github: [https://github.com/mevaldovi](https://github.com/mevaldovi)
+
+LinkedIn : [https://www.linkedin.com/in/marie-valdovinos-a616b21b1](https://www.linkedin.com/in/marie-valdovinos-a616b21b1)
 
 
 Shoot me an email:[mevaldovi@gmail.com](mailto:mevaldovi@gmail.com)
